@@ -15,8 +15,48 @@ recognition.onstart = function () {
 recognition.onresult = function (event) {
     let current = event.resultIndex;
     let transcript = event.results[current][0].transcript;
+    transcript = transcript.toLowerCase();
 
-    console.log(transcript);
+    if(transcript.includes("hello")){
+        readOut("hello to you too");
+        console.log("greeting");
+    };
+
+    if(transcript.includes("open youtube")){
+        readOut("opening youtube");
+        window.open("https://www.youtube.com/");
+        console.log("opening youtube"); 
+    };
+
+    if(transcript.includes("open google")){
+        readOut("opening google");
+        window.open("https://www.google.com/");
+        console.log("opening google"); 
+    };
+
+    if(transcript.includes("search for")){
+        readOut("I found this through search");
+        let input = transcript.split(""); // to split the the transcript to find index
+        input.splice(0,11);
+        input = input.join("").split(" ").join("+");
+
+        console.log(input);
+        window.open(`https://www.google.com/search?q=${input}`);
+        console.log("opening google search"); 
+    };
+
+    if(transcript.includes("search youtube for")){
+        readOut("I found this through youtube search");
+        let input = transcript.split(""); // to split the the transcript to find index
+        input.splice(0,19);
+        input = input.join("").split(" ").join("+");
+
+        console.log(input);
+        window.open(`https://www.youtube.com/results?search_query=${input}`);
+        console.log("opening youtube search"); 
+    };
+
+    console.log(`user words : ${transcript}`);
 };
 
 recognition.onend = function (event) {
