@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+    font-family: 'edoSZ';
+    src: url('fonts/edosz.ttf');
+}
 
 *{
     margin: 0;
@@ -9,17 +13,53 @@
     font-family: 'Sofia Sans', sans-serif;
 }
 
-#title {
-    justify-self: center;
+h1 {
+    font-family: 'edoSZ', sans-serif;
+    text-align: center; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    font-size: 10vw;
+    margin: auto; 
 }
 
 button {
     color: black;
-    bottom: 10%;
+    background-color: aquamarine;
+    height: 50px;
+    width: 50px;
+    left: 0;
+    right: 0;
     display: inline-block;
     user-select: none;
     text-align: center;
     position: absolute;
+    margin: auto;
+    border-radius: 20%;
+}
+
+#start { 
+    bottom: 60px;
+    float: left;
+    margin-left: 720px; 
+}
+
+#stop { 
+    bottom: 60px;
+    float: left;
+    margin-left: 770px; 
+}
+
+#speak { 
+    bottom: 180px; 
+    margin: 10px auto 0;
+    background-color: darkblue;
+    color: antiquewhite;
+    height: 65px;
+    width: 65px;
+    border-radius: 40%;
+    font-weight: bolder;
 }
 
 
@@ -42,6 +82,11 @@ label{
 #logogif{
     top: 0;
     right: 0;
+}
+
+#deltagif{
+    top: 25%;
+    right: 40%;
 }
 
 
@@ -71,59 +116,3 @@ label{
     left: 60px;
 }
 
-.chat {
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    max-height: 600px;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    padding-bottom: 15px;
-    z-index: 1000;
-}
-
-.chat::-webkit-scrollbar{
-    display: none;
-}
-
-.userMsg {
-    text-align: right;
-    width: 300px;
-    color: deepskyblue;
-}
-
-.deltaMsg {
-    text-align: left;
-    width: 300px;
-    color: yellow;
-    margin-top: 5px;
-}
-
-.messages {
-    display: none;
-    background-color: white;
-}
-
-.messages p {
-    color: darkred;
-}
-
-#start_delta_btn {
-    border: none;
-    outline: none;
-    position: fixed;
-    left: 5px;
-    transform: translateX(0);
-    top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-#start_delta_btn img {
-    height: 100px;
-}
