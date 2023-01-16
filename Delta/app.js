@@ -1,7 +1,8 @@
 //Elements
 const startBtn = document.querySelector("#start");
-const endBtn = document.querySelector("#stop"); //endBtn was changed from stopBtn
+const endBtn = document.querySelector("#stop"); 
 const speakBtn = document.querySelector("#speak");
+const time = document.querySelector("#time");
 
 //Speech Recognition Setup
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -86,10 +87,26 @@ function readOut(message){
     console.log("Delta Speaking");
 }
 
-//example
+//example greeting
 speakBtn.addEventListener("click", () => {
     readOut("おはよう ございます");
 });
 window.onload = function () {
     readOut("   ");
+}
+
+//time setup
+let date = new Date();
+let hrs = date.getHours();
+let mins = date.getMinutes();
+let secs = date.getSeconds();
+window.onload = () => {
+    time.textContent = `${hrs} : ${mins} : ${secs}`;
+    setInterval(() => {
+        let date = new Date();
+        let hrs = date.getHours();
+        let mins = date.getMinutes();
+        let secs = date.getSeconds();
+        time.textContent = `${hrs} : ${mins} : ${secs}`;
+    }, 1000)
 }
